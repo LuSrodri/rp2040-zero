@@ -1,18 +1,16 @@
-import { VoltageRegulator } from "./lib/VoltageRegulator"
-import { RP2040 } from "./imports/RP2040"
-import { PinOutCircuit } from "./lib/PinOutCircuit"
-import { LedCircuit } from "./lib/LedCircuit"
-import { FlashCircuit } from "./lib/FlashCircuit"
-import { CrystalCircuit } from "./lib/CrystalCircuit"
-import { RP2040Circuit } from "./lib/RP2040Circuit"
+import { XiaoBoard } from "@tscircuit/common"
 
-export default () => (
-  <board routingDisabled schMaxTraceDistance={5}>
-    <VoltageRegulator />
-    <PinOutCircuit />
-    <LedCircuit />
-    <FlashCircuit />
-    <CrystalCircuit />
-    <RP2040Circuit />
-  </board>
-)
+/**
+ * RP2040-Zero board using the standard XiaoBoard RP2040 variant
+ * from @tscircuit/common.
+ *
+ * The XiaoBoard component includes the full Waveshare RP2040-Zero
+ * form factor with:
+ *   - RP2040 microcontroller
+ *   - USB-C connector
+ *   - WS2812B RGB LED
+ *   - Flash memory
+ *   - 3.3V LDO regulator
+ *   - 20 GPIO pins broken out
+ */
+export default () => <XiaoBoard variant="RP2040" name="U1" />
